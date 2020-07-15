@@ -1,0 +1,20 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        
+        int positions[]= new int[2];
+        Map<Integer,Integer> elements = new HashMap<>();        
+        for(int i=0;i< nums.length;i++)
+        {
+            int complement=target-nums[i];
+            if(elements.containsKey(complement))
+            {
+                positions[0]=elements.get(complement);
+                positions[1]=i;
+            }
+            elements.put(nums[i],i);
+        }
+        return positions;
+        
+    }
+}
